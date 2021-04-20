@@ -42,8 +42,8 @@ ext {
     //依赖第三方配置
     dependencies = [
             //阿里路由框架
-            "arouter_api"                          : "com.alibaba:arouter-api:1.4.1",
-            "arouter_compiler"                     : "com.alibaba:arouter-compiler:1.2.2",
+            "arouter_api"                          : "com.alibaba:arouter-api:1.5.1",
+            "arouter_compiler"                     : "com.alibaba:arouter-compiler:1.5.1",
             "pgy_sdk"                              : 'com.pgyersdk:sdk:3.0.10',
             //rxjava
             "rxjava"                               : "io.reactivex.rxjava2:rxjava:2.2.3",
