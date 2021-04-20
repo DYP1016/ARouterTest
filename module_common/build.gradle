@@ -56,4 +56,5 @@ dependencies {
     api rootProject.ext.androidx["constraintlayout"]
     api rootProject.ext.androidx["appcompat"]
     api rootProject.ext.dependencies["immersionBar"]
+    api rootProject.ext.dependencies["qvtoast"]
 }

@@ -4,7 +4,8 @@ interface AppConst {
 
     interface Router {
         object Main {
-            const val A_MAIN = "/main/mainActivity"
+            const val A_MAIN = "/main/MainActivity"
+            const val S_MAIN = "/main/MainService"
         }
     }
 }
