@@ -2,7 +2,10 @@ package com.dyp.common.base
 
 import android.app.Activity
 import android.app.Application
+import android.content.Context
+import androidx.multidex.MultiDex
 import com.alibaba.android.arouter.launcher.ARouter
+import com.dyp.common.init.InitManager
 import com.dyp.test.common.BuildConfig
 import com.dyp.test.common.R
 import com.quvii.qvlib.QvLibCore
@@ -11,6 +14,11 @@ import com.quvii.qvlib.util.QvEncryptKeyStoreUtil
 import com.quvii.qvlib.util.QvPermissionUtils
 
 class App : QvBaseApp() {
+    override fun attachBaseContext(base: Context?) {
+        super.attachBaseContext(base)
+        MultiDex.install(this)
+    }
+
     override fun onCreate() {
         super.onCreate()
         val start = System.currentTimeMillis()

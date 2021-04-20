@@ -11,6 +11,7 @@ interface AppConst {
 
         object Account {
             const val NAME = "/account/"
+            const val S_ACCOUNT = "${NAME}AccountService"
         }
     }
 }

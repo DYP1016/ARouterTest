@@ -3,6 +3,7 @@ package com.dyp.main.service
 import android.annotation.SuppressLint
 import android.content.Context
 import com.alibaba.android.arouter.facade.annotation.Route
+import com.dyp.common.base.logD
 import com.dyp.common.base.logI
 import com.dyp.core.config.AppConst
 import com.dyp.core.export.service.main.MainService
@@ -26,6 +27,6 @@ class MainServiceImpl : MainService {
     }
 
     override fun init(context: Context?) {
-
+        logD("init")
     }
 }
