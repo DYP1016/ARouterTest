@@ -3,7 +3,7 @@
     package="com.dyp.test.module_account">
 
     <application>
-        <activity android:name="com.dyp.ui.LoadingActivity">
+        <activity android:name="com.dyp.account.ui.LoadingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -17,13 +17,6 @@ android {
             versionCode rootProject.ext.android.versionCode
             versionName rootProject.ext.android.versionName
             testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-            //阿里路由框架配置
-            javaCompileOptions {
-                annotationProcessorOptions {
-                    arguments = [AROUTER_MODULE_NAME: project.getName()]
-                    includeCompileClasspath = true
-                }
-            }
         }
     }
 
@@ -57,10 +50,22 @@ android {
             }
         }
     }
+
+    android.buildFeatures.viewBinding = true
+//    viewBinding { enabled = true }
+}
+
+//阿里路由框架配置
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
 }
 
 dependencies {
     api fileTree(dir: "libs", include: ["*.jar"])
+    api fileTree(includes: ['*.aar'], dir: 'libs')
+
     //rxjava
     api rootProject.ext.dependencies.rxjava
     api rootProject.ext.dependencies.rxandroid
@@ -69,10 +74,11 @@ dependencies {
     api rootProject.ext.androidx["kotlin_lib"]
     api rootProject.ext.androidx["kotlin_core"]
     api rootProject.ext.dependencies["arouter_api"]
-    api rootProject.ext.dependencies["arouter_compiler"]
+    kapt rootProject.ext.dependencies["arouter_compiler"]
     api rootProject.ext.dependencies["koin_scope"]
     api rootProject.ext.dependencies["koin_viewmodel"]
     api rootProject.ext.dependencies["koin_fragment"]
     api rootProject.ext.androidx["constraintlayout"]
     api rootProject.ext.androidx["appcompat"]
+    api rootProject.ext.dependencies["immersionBar"]
 }

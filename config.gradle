@@ -28,7 +28,8 @@ ext {
     versions = [
             "support-version": "1.0.0",
             "junit-version"  : "4.12",
-            "koin-version"   : "2.2.0"
+            "koin-version"   : "2.2.0",
+            'immersionBar_version': "2.3.0"
     ]
     //support配置
     support = [
@@ -121,7 +122,8 @@ ext {
             'calendarview'                         : 'com.haibin:calendarview:3.7.0',
             'dialog-datetime'                      : 'com.afollestad.material-dialogs:datetime:3.3.0',
             'dialog-lifecycle'                     : 'com.afollestad.material-dialogs:lifecycle:3.3.0',
-            'matisse'                              : 'com.zhihu.android:matisse:0.5.3-beta3'
+            'matisse'                              : 'com.zhihu.android:matisse:0.5.3-beta3',
+            "immersionBar"                         : "com.gyf.barlibrary:barlibrary:${versions["immersionBar_version"]}"
 
 
     ]

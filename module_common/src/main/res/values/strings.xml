@@ -1,0 +1,8 @@
+<resources>
+    <string name="key_permission_title_permission_failed">Permission apply failure</string>
+    <string name="key_permission_message_permission_failed">We need some permissions are you refuse or system error, would you please go to Settings page manual authorization, otherwise the function to use!</string>
+    <string name="key_permission_resume">Resume</string>
+    <string name="key_cancel">Cancel</string>
+    <string name="key_setting">Setting</string>
+
+</resources>
