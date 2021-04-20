@@ -13,6 +13,7 @@ import com.quvii.qvlib.util.QvPermissionUtils
 class App : QvBaseApp() {
     override fun onCreate() {
         super.onCreate()
+        val start = System.currentTimeMillis()
         if (BuildConfig.DEBUG) {
             ARouter.openLog()
             ARouter.openDebug()
@@ -20,7 +21,7 @@ class App : QvBaseApp() {
         ARouter.init(this)
 
         initQvLib()
-        logI("init")
+        logI("init: ${System.currentTimeMillis() - start}ms")
     }
 
     override fun onActivityStarted(p0: Activity?) {

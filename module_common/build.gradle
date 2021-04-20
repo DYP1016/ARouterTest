@@ -2,6 +2,7 @@ plugins {
     id 'com.android.library'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'com.alibaba.arouter'
 }
 
 android {
@@ -34,32 +35,7 @@ android {
         jvmTarget = '1.8'
     }
 
-    sourceSets {
-        main {
-            jniLibs.srcDirs = ['libs']
-            if (isBuildModule.toBoolean()) {
-                //独立运行
-                manifest.srcFile 'src/main/alone/AndroidManifest.xml'
-            } else {
-                //合并到宿主
-                manifest.srcFile 'src/main/AndroidManifest.xml'
-                resources {
-                    //正式版本时，排除alone文件夹下所有调试文件
-                    exclude 'src/main/alone/*'
-                }
-            }
-        }
-    }
-
     android.buildFeatures.viewBinding = true
-//    viewBinding { enabled = true }
-}
-
-//阿里路由框架配置
-kapt {
-    arguments {
-        arg("AROUTER_MODULE_NAME", project.getName())
-    }
 }
 
 dependencies {
@@ -74,7 +50,6 @@ dependencies {
     api rootProject.ext.androidx["kotlin_lib"]
     api rootProject.ext.androidx["kotlin_core"]
     api rootProject.ext.dependencies["arouter_api"]
-    kapt rootProject.ext.dependencies["arouter_compiler"]
     api rootProject.ext.dependencies["koin_scope"]
     api rootProject.ext.dependencies["koin_viewmodel"]
     api rootProject.ext.dependencies["koin_fragment"]
