@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.dyp.main.ui.MainActivity">
+    tools:context="com.dyp.account.ui.LoadingActivity">
 
     <ImageView
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:contentDescription="@string/main_info"
-        android:src="@drawable/main_photo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/account_man"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

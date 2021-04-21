@@ -50,7 +50,9 @@ dependencies {
     implementation project(':module_common')
     implementation project(':module_core')
     if (!isBuildModule.toBoolean()) {
+        //两个main模块可快速切换
         implementation project(':module_main')
+//        implementation project(':module_main2')
         implementation project(':module_account')
     }
 }
