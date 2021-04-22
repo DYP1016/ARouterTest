@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import com.alibaba.android.arouter.facade.annotation.Autowired
 import com.alibaba.android.arouter.facade.annotation.Route
+import com.dyp.common.base.logD
 import com.dyp.common.base.logE
 import com.dyp.common.mvvm.BaseVMActivity
 import com.dyp.common.route.RouteCenter
