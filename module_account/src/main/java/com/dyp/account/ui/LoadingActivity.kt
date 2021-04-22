@@ -14,7 +14,8 @@ class LoadingActivity : BaseVMActivity<AccountActivityLoadingBinding>() {
     private val viewModel = LoadingViewModel()
 
     @Autowired
-    lateinit var mainService: MainService
+    @JvmField
+    var mainService: MainService? = null
 
     override fun getViewBinding(): AccountActivityLoadingBinding {
         return AccountActivityLoadingBinding.inflate(layoutInflater)
@@ -36,7 +37,7 @@ class LoadingActivity : BaseVMActivity<AccountActivityLoadingBinding>() {
         }
 
         binding.tvHint.setOnLongClickListener {
-            mainService.test2(123) {
+            mainService?.test2(123) {
                 233
             }
             true
