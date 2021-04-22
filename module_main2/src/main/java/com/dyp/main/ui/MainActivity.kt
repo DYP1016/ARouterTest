@@ -10,11 +10,11 @@ import com.dyp.common.route.RouteCenter
 import com.dyp.core.config.AppConst
 import com.dyp.core.export.entity.AccountInfo
 import com.dyp.test.module_main2.R
-import com.dyp.test.module_main2.databinding.Main2ActivityMainBinding
+import com.dyp.test.module_main2.databinding.MainActivityMainBinding
 import com.quvii.qvmvvm.core.base.KtxBaseViewModel
 
 @Route(path = AppConst.Router.Main.A_MAIN)
-class MainActivity : BaseVMActivity<Main2ActivityMainBinding>() {
+class MainActivity : BaseVMActivity<MainActivityMainBinding>() {
     private val viewModel = MainViewModel()
 
     @Autowired(name = AccountInfo.NAME)
@@ -28,8 +28,8 @@ class MainActivity : BaseVMActivity<Main2ActivityMainBinding>() {
         RouteCenter.getFragment(AppConst.Router.Account.F_ACCOUNT_INFO)
     }
 
-    override fun getViewBinding(): Main2ActivityMainBinding {
-        return Main2ActivityMainBinding.inflate(layoutInflater)
+    override fun getViewBinding(): MainActivityMainBinding {
+        return MainActivityMainBinding.inflate(layoutInflater)
     }
 
     override fun initView(savedInstanceState: Bundle?) {

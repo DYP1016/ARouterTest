@@ -4,6 +4,10 @@ plugins {
     id 'kotlin-kapt'
 }
 
+//组件配置项
+int module_main_type = 1        //main模块类型, 1 or 2
+
+
 android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
     buildToolsVersion rootProject.ext.android.buildToolsVersion
@@ -51,8 +55,12 @@ dependencies {
     implementation project(':module_core')
     if (!isBuildModule.toBoolean()) {
         //两个main模块可快速切换
-        implementation project(':module_main')
-//        implementation project(':module_main2')
+        if (module_main_type == 2) {
+            implementation project(':module_main2')
+        } else {
+            implementation project(':module_main')
+        }
+
         implementation project(':module_account')
     }
 }
