@@ -27,13 +27,13 @@ class LoadingActivity : BaseVMActivity<AccountActivityLoadingBinding>() {
                 .build(AppConst.Router.Main.A_MAIN)
                 .withInt(AppConst.ID.ACCOUNT_ID, 20)
                 .withObject(AccountInfo.NAME, AccountInfo(20, "qvtest"))
-                .navigation()
+                .navigation(this)
 
             ARouter.getInstance()
                 .build(AppConst.Router.Main.A_MAIN)
                 .withInt(AppConst.ID.ACCOUNT_ID, 21)
                 .withObject(AccountInfo.NAME, AccountInfo(21, "qvtest2"))
-                .navigation()
+                .navigation(this)
         }
 
         binding.tvHint.setOnLongClickListener {

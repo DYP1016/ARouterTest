@@ -4,9 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import com.alibaba.android.arouter.facade.annotation.Autowired
 import com.alibaba.android.arouter.facade.annotation.Route
+import com.alibaba.android.arouter.launcher.ARouter
 import com.dyp.common.base.logE
 import com.dyp.common.mvvm.BaseVMActivity
-import com.dyp.common.route.RouteCenter
+import com.dyp.common.mvvm.BaseVMFragment
 import com.dyp.core.config.AppConst
 import com.dyp.core.export.entity.AccountInfo
 import com.dyp.test.module_main2.R
@@ -24,18 +25,21 @@ class MainActivity : BaseVMActivity<MainActivityMainBinding>() {
     @JvmField
     var accountId: Int = 0
 
-    private val flAccount by lazy {
-        RouteCenter.getFragment(AppConst.Router.Account.F_ACCOUNT_INFO)
-    }
+    private var flAccount: BaseVMFragment<*>? = null
 
     override fun getViewBinding(): MainActivityMainBinding {
         return MainActivityMainBinding.inflate(layoutInflater)
     }
 
     override fun initView(savedInstanceState: Bundle?) {
-        supportFragmentManager.beginTransaction().apply {
-            add(R.id.fl_content, flAccount)
-            commit()
+        flAccount = ARouter.getInstance().build(AppConst.Router.Account.F_ACCOUNT_INFO)
+            .navigation() as? BaseVMFragment<*>
+
+        flAccount?.let {
+            supportFragmentManager.beginTransaction().apply {
+                add(R.id.fl_content, it)
+                commit()
+            }
         }
     }
 
